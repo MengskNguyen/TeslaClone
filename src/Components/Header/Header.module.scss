@@ -29,9 +29,16 @@ $desktop-width: 1024px;
     display: flex;
     align-items: center;
     justify-content: space-between;
-    padding: 0 20px;
+    padding: 0 32px;
     background-color: transparent;
-    min-height: 60px;
+    min-height: 56px;
+    z-index: 1;
+}
+
+.logo {
+    width: 152px;
+    padding: 0 16px;
+    height: 32px;
 }
 
 .menu {
@@ -43,21 +50,55 @@ $desktop-width: 1024px;
         display: none;
     }
     a {
-        font-weight: 600;
-        text-transform: uppercase;
-        padding: 0 10px;
-        flex-wrap: nowrap;
+        padding: 4px 8px;
+        transition: background-color 0.3s linear;
+
+        &:hover {
+            background-color: rgba($color: #a0a2a2, $alpha: 0.3);
+            border-radius: 2px;
+        }
+
+        span {
+            padding: 0 10px;
+            flex-wrap: nowrap;
+            color: var(--primary-font);
+            font-size: 15px;
+            font-weight: 500;
+        }
     }
 }
 
 .right-menu {
+    font-weight: 500;
     a {
-        font-weight: 600;
-        text-transform: uppercase;
-        margin-right: 10px;
+        padding: 4px 8px;
+        font-size: 15px;
+        transition: background-color 0.3s linear;
+
+        &:hover {
+            background-color: rgba($color: #a0a2a2, $alpha: 0.3);
+            border-radius: 2px;
+        }
+
+        span {
+            padding: 0 8px;
+        }
     }
 
-    .menu-icon {
+    button {
+        padding: 4px 8px;
+        font-size: 15px;
+        flex-wrap: nowrap;
+        background-color: transparent;
         cursor: pointer;
+
+        &:hover {
+            background-color: rgba($color: #a0a2a2, $alpha: 0.3);
+            border-radius: 2px;
+        }
+
+        span {
+            padding: 0 8px;
+        }
     }
 }

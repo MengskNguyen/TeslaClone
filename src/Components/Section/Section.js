@@ -1,5 +1,7 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
+import Fade from 'react-reveal/Fade';
+
 import styles from './Section.module.scss';
 import downArrow from '~/assets/images/down-arrow.svg';
 
@@ -8,16 +10,22 @@ const Section = ({ backgroundImg, title, desc, leftBtnTxt, rightBtnTxt }) => {
     const background = require(`../../assets/images/${backgroundImg}`);
     return (
         <div className={cx('wrapper')} style={{ backgroundImage: `url('${background}')` }}>
-            <div className={cx('text')}>
-                <h1>{title}</h1>
-                <p>{desc}</p>
-            </div>
-            <div className={cx('btn-group')}>
-                <div className={cx('btns')}>
-                    <button className={cx('left-btn')}>{leftBtnTxt}</button>
-                    {rightBtnTxt && <button className={cx('right-btn')}>{rightBtnTxt}</button>}
+            <Fade>
+                <div className={cx('text')}>
+                    <h1>{title}</h1>
+                    <p>{desc}</p>
                 </div>
-                <img className={cx('down-arrow')} src={downArrow} alt="down-arrow" />
+            </Fade>
+            <div className={cx('btn-group')}>
+                <Fade>
+                    <div className={cx('btns')}>
+                        <button className={cx('left-btn')}>{leftBtnTxt}</button>
+                        {rightBtnTxt && <button className={cx('right-btn')}>{rightBtnTxt}</button>}
+                    </div>
+                    <div className={cx('arrow-container')}>
+                        <img className={cx('down-arrow')} src={downArrow} alt="down-arrow" />
+                    </div>
+                </Fade>
             </div>
         </div>
     );

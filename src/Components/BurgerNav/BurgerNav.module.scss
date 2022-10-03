@@ -1,0 +1,33 @@
+.wrapper {
+    position: fixed;
+    right: 0;
+    top: 0;
+    bottom: 0;
+    z-index: 10;
+    background-color: white;
+    width: 300px;
+    list-style: none;
+    padding: 20px;
+    display: flex;
+    flex-direction: column;
+
+    li {
+        padding: 15px 0;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.2);
+
+        a {
+            font-weight: 600;
+        }
+    }
+
+    .close-wrapper {
+        display: flex;
+        justify-content: flex-end;
+    }
+}
+
+.close-btn {
+    padding: 12px;
+    cursor: pointer;
+    font-size: 20px;
+}

@@ -83,10 +83,16 @@ $desktop-width: 1024px;
     }
 }
 
+.arrow-container {
+    display: flex;
+    justify-content: center;
+}
+
 .down-arrow {
     margin-top: 20px;
     height: 40px;
     animation: animateDown infinite 1.5s;
+    cursor: pointer;
 }
 
 // Keyframe
