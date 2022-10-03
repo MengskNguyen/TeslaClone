@@ -1,0 +1,63 @@
+/* Mixin */
+$mobile-width: 480px;
+$tablet-width: 768px;
+$desktop-width: 1024px;
+
+@mixin mobile {
+    @media (max-width: #{$mobile-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin tablet {
+    @media (min-width: #{$tablet-width}) and (max-width: #{$desktop-width - 1px}) {
+        @content;
+    }
+}
+
+@mixin desktop {
+    @media (min-width: #{$desktop-width}) {
+        @content;
+    }
+}
+
+.wrapper {
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 20px;
+    background-color: transparent;
+    min-height: 60px;
+}
+
+.menu {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex: 1;
+    @include mobile {
+        display: none;
+    }
+    a {
+        font-weight: 600;
+        text-transform: uppercase;
+        padding: 0 10px;
+        flex-wrap: nowrap;
+    }
+}
+
+.right-menu {
+    a {
+        font-weight: 600;
+        text-transform: uppercase;
+        margin-right: 10px;
+    }
+
+    .menu-icon {
+        cursor: pointer;
+    }
+}

@@ -9,8 +9,13 @@
 
 body {
     width: 100%;
+    overflow-x: hidden;
 }
 
 button {
     border: none;
+}
+
+a {
+    text-decoration: none;
 }
