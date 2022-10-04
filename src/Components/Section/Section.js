@@ -5,30 +5,40 @@ import Reveal from 'react-reveal/Reveal';
 
 import styles from './Section.module.scss';
 import downArrow from '~/assets/images/down-arrow.svg';
+import 'animate.css';
 
 const cx = classNames.bind(styles);
-const Section = ({ backgroundImg, title, desc, leftBtnTxt, rightBtnTxt }) => {
+const Section = ({ backgroundImg, title, desc, leftBtnTxt, rightBtnTxt, noDownArrow = false }) => {
     const background = require(`../../assets/images/${backgroundImg}`);
     return (
         <div className={cx('wrapper')} style={{ backgroundImage: `url('${background}')` }}>
-            <Fade bottom>
+            <Reveal effect="animate__fadeInUp">
                 <div className={cx('text')}>
                     <h1>{title}</h1>
                     <p>{desc}</p>
                 </div>
-            </Fade>
+            </Reveal>
             <div className={cx('btn-group')}>
                 <div className={cx('btns')}>
-                    <Fade left delay="1000">
-                        <button className={cx('left-btn')}>{leftBtnTxt}</button>
-                    </Fade>
-                    <Fade right delay="1000">
+                    {rightBtnTxt ? (
+                        <Fade left delay="800">
+                            <button className={cx('left-btn')}>{leftBtnTxt}</button>
+                        </Fade>
+                    ) : (
+                        <Fade bottom delay="800">
+                            <button className={cx('left-btn')}>{leftBtnTxt}</button>
+                        </Fade>
+                    )}
+
+                    <Fade right delay="800">
                         {rightBtnTxt && <button className={cx('right-btn')}>{rightBtnTxt}</button>}
                     </Fade>
                 </div>
-                <div className={cx('arrow-container')}>
-                    <img className={cx('down-arrow')} src={downArrow} alt="down-arrow" />
-                </div>
+                {!noDownArrow && (
+                    <div className={cx('arrow-container')}>
+                        <img className={cx('down-arrow')} src={downArrow} alt="down-arrow" />
+                    </div>
+                )}
             </div>
         </div>
     );

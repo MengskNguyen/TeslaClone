@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from 'react-redux';
 import { setShowState } from '~/features/burgerNav/burgerNavSlice';
 import { selectCars } from '~/features/carSlice/carSlice';
+import { Link } from 'react-router-dom';
 
 import styles from './Header.module.scss';
 import logo from '~/assets/images/logo1.svg';
@@ -14,17 +15,22 @@ const Header = () => {
     const dispatch = useDispatch();
     const cars = useSelector(selectCars);
 
-    console.log('cars: ', cars);
+    const removeSpace = (input) => {
+        const newInput = input.replace(' ', '');
+        return `/${newInput}`;
+    };
 
     return (
         <div className={cx('wrapper')}>
-            <img className={cx('logo')} src={logo} alt="Tesla" />
+            <Link to="/">
+                <img className={cx('logo')} src={logo} alt="Tesla" />
+            </Link>
             <div className={cx('menu')}>
                 {cars.cars &&
                     cars.cars.map((car, index) => (
-                        <a key={index} href="https://www.youtube.com/">
+                        <Link key={index} to={removeSpace(car)}>
                             <span>{car}</span>
-                        </a>
+                        </Link>
                     ))}
                 <a href="https://www.youtube.com/">
                     <span>Solar Roof</span>

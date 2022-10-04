@@ -17,6 +17,13 @@ const Home = () => {
                 rightBtnTxt="Existing Inventory"
             />
             <Section
+                backgroundImg="model-3.jpg"
+                title="Model 3"
+                desc="Order Online for Touchless Delivery"
+                leftBtnTxt="Custom Order"
+                rightBtnTxt="Existing Inventory"
+            />
+            <Section
                 backgroundImg="model-y.jpg"
                 title="Model Y"
                 desc="Order Online for Touchless Delivery"
@@ -44,7 +51,7 @@ const Home = () => {
                 leftBtnTxt="Order Now"
                 rightBtnTxt="Learn More"
             />
-            <Section backgroundImg="accessories.jpg" title="Accessories" leftBtnTxt="Shop now" />
+            <Section backgroundImg="accessories.jpg" title="Accessories" leftBtnTxt="Shop now" noDownArrow />
         </div>
     );
 };

@@ -11,6 +11,10 @@
     --primary-font: #171a20;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     width: 100%;
     overflow-x: hidden;
