@@ -1,4 +1,4 @@
-.wrapper {
+.section {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
@@ -26,7 +26,8 @@
 }
 
 .info {
-    margin-top: 50vh;
+    margin-top: 60vh;
+    margin-bottom: 10vh;
     display: flex;
     width: 100%;
     align-items: center;
@@ -60,6 +61,23 @@
     button {
         color: currentColor;
         background-color: transparent;
+        width: 204px;
+        border: 3px #fff solid;
+        border-radius: 4px;
+        cursor: pointer;
+        transition: all linear 0.3s;
+
+        &:hover {
+            background-color: #fff;
+            color: black;
+        }
+
+        span {
+            font-size: 14px;
+            height: 40px;
+            font-weight: 600;
+            line-height: 40px;
+        }
     }
 }
 
@@ -73,6 +91,89 @@
     height: 40px;
     animation: animateDown infinite 1.5s;
     cursor: pointer;
+}
+
+// Sub-section
+
+.sub-section {
+    .title {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 172px;
+        background-color: black;
+
+        .text-Wrap {
+            background-color: black;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        span {
+            color: white;
+            display: block;
+            text-align: center;
+            font-size: 32px;
+        }
+
+        .topBG {
+            background-image: linear-gradient(to top, black, rgba(0, 0, 0, 0.98));
+            width: 100%;
+            height: 10px;
+        }
+        .bottomBG {
+            background-image: linear-gradient(to bottom, black, rgba(0, 0, 0, 0.98));
+            width: 100%;
+            height: 20px;
+        }
+    }
+}
+
+// sm-section
+
+.sm-section-container {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background-color: black;
+    padding-top: 140px;
+}
+
+.sm-section {
+    display: flex;
+    width: 980px;
+}
+
+.sm-section ~ .sm-section {
+    padding-top: 20px;
+}
+
+.sm-section-img {
+    flex: 1;
+    img {
+        width: 100%;
+    }
+}
+.sm-section-text {
+    flex: 1;
+
+    display: flex;
+    align-items: center;
+    .sm-section-content {
+        font-size: 14px;
+        color: white;
+
+        h3 {
+            color: currentColor;
+        }
+
+        p {
+            padding-top: 14px;
+            color: currentColor;
+        }
+    }
 }
 
 // Keyframe

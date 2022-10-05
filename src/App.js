@@ -2,7 +2,7 @@ import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 
 import Header from './Components/Header';
 import Home from './pages/Home';
-import ModelS from './pages/Model';
+import { ModelsPage, Model3Page, ModelxPage, ModelyPage } from './pages/Model';
 
 function App() {
     return (
@@ -11,7 +11,10 @@ function App() {
                 <Header />
                 <Routes>
                     <Route path="/" element={<Home />} />
-                    <Route path="/modelS" element={<ModelS />} />
+                    <Route path="/ModelS" element={<ModelsPage />} />
+                    <Route path="/Model3" element={<Model3Page />} />
+                    <Route path="/ModelX" element={<ModelxPage />} />
+                    <Route path="/ModelY" element={<ModelyPage />} />
                 </Routes>
             </Router>
         </div>

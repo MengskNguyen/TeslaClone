@@ -32,20 +32,14 @@ const Header = () => {
                             <span>{car}</span>
                         </Link>
                     ))}
-                <a href="https://www.youtube.com/">
-                    <span>Solar Roof</span>
-                </a>
-                <a href="https://www.youtube.com/">
-                    <span>Solar Panels</span>
-                </a>
             </div>
             <div className={cx('right-menu')}>
-                <a href="https://www.youtube.com/">
+                <Link to="/">
                     <span>Shop</span>
-                </a>
-                <a href="https://www.youtube.com/">
+                </Link>
+                <Link to="/">
                     <span>Account</span>
-                </a>
+                </Link>
                 <button onClick={() => dispatch(setShowState())}>
                     <span>Menu</span>
                 </button>

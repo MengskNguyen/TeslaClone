@@ -3,6 +3,7 @@ import classNames from 'classnames/bind';
 
 import styles from './Home.module.scss';
 import Section from '~/Components/Section';
+import Footer from '../Footer';
 
 const cx = classNames.bind(styles);
 
@@ -52,6 +53,7 @@ const Home = () => {
                 rightBtnTxt="Learn More"
             />
             <Section backgroundImg="accessories.jpg" title="Accessories" leftBtnTxt="Shop now" noDownArrow />
+            <Footer />
         </div>
     );
 };

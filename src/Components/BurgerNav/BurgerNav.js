@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faXmark } from '@fortawesome/free-solid-svg-icons';
 import { useDispatch, useSelector } from 'react-redux';
 import { setShowState, getShowState } from '~/features/burgerNav/burgerNavSlice';
+import { Link } from 'react-router-dom';
 
 import styles from './BurgerNav.module.scss';
 
@@ -25,19 +26,19 @@ const BurgerNav = () => {
                         />
                     </div>
                     <li>
-                        <a href="https://www.youtube.com/">Existing inventory</a>
+                        <Link to="/">Existing inventory</Link>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/">Used inventory</a>
+                        <Link to="/">Used inventory</Link>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/">Trade-in</a>
+                        <Link to="/">Trade-in</Link>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/">Cyberstruck</a>
+                        <Link to="/">Cyberstruck</Link>
                     </li>
                     <li>
-                        <a href="https://www.youtube.com/">Roadaster</a>
+                        <Link to="/">Roadaster</Link>
                     </li>
                 </div>
             )}

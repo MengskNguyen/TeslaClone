@@ -1,7 +1,6 @@
 import PropTypes from 'prop-types';
 import classNames from 'classnames/bind';
 import Fade from 'react-reveal/Fade';
-import Reveal from 'react-reveal/Reveal';
 
 import styles from './Section.module.scss';
 import downArrow from '~/assets/images/down-arrow.svg';
@@ -12,30 +11,30 @@ const Section = ({ backgroundImg, title, desc, leftBtnTxt, rightBtnTxt, noDownAr
     const background = require(`../../assets/images/${backgroundImg}`);
     return (
         <div className={cx('wrapper')} style={{ backgroundImage: `url('${background}')` }}>
-            <Reveal effect="animate__fadeInUp">
+            <Fade bottom distance="25%">
                 <div className={cx('text')}>
                     <h1>{title}</h1>
                     <p>{desc}</p>
                 </div>
-            </Reveal>
+            </Fade>
             <div className={cx('btn-group')}>
                 <div className={cx('btns')}>
                     {rightBtnTxt ? (
-                        <Fade left delay="800">
+                        <Fade left delay={800} distance="50%">
                             <button className={cx('left-btn')}>{leftBtnTxt}</button>
                         </Fade>
                     ) : (
-                        <Fade bottom delay="800">
+                        <Fade bottom delay={800} distance="50%">
                             <button className={cx('left-btn')}>{leftBtnTxt}</button>
                         </Fade>
                     )}
 
-                    <Fade right delay="800">
+                    <Fade right delay={800} distance="50%">
                         {rightBtnTxt && <button className={cx('right-btn')}>{rightBtnTxt}</button>}
                     </Fade>
                 </div>
                 {!noDownArrow && (
-                    <div className={cx('arrow-container')}>
+                    <div onClick={() => window.scrollBy(0, window.innerHeight)} className={cx('arrow-container')}>
                         <img className={cx('down-arrow')} src={downArrow} alt="down-arrow" />
                     </div>
                 )}
