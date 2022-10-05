@@ -33,12 +33,20 @@ $desktop-width: 1024px;
     background-color: transparent;
     min-height: 56px;
     z-index: 1;
+
+    @include mobile {
+        padding: 0 8px;
+    }
 }
 
 .logo {
     width: 152px;
     padding: 0 16px;
     height: 32px;
+
+    @include mobile {
+        padding: 0px;
+    }
 }
 
 .menu {
@@ -47,6 +55,10 @@ $desktop-width: 1024px;
     justify-content: center;
     flex: 1;
     @include mobile {
+        display: none;
+    }
+
+    @include tablet {
         display: none;
     }
     a {
@@ -70,6 +82,9 @@ $desktop-width: 1024px;
 
 .right-menu {
     font-weight: 500;
+    @include mobile {
+        display: none;
+    }
     a {
         padding: 4px 8px;
         font-size: 15px;
