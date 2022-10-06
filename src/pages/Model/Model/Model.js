@@ -4,7 +4,7 @@ import Fade from 'react-reveal/Fade';
 
 import styles from './Model.module.scss';
 import Footer from '~/pages/Footer';
-import videos from '~/assets/videos.json';
+import VidCarousel from '~/Components/VidCarousel';
 
 const cx = classNames.bind(styles);
 
@@ -14,9 +14,6 @@ const Model = ({ title, description, image, range, time, topSpeed, peakPower }) 
     const connected = require('../../../assets/images/connected.jpg');
     const audio = require('../../../assets/images/audio.jpg');
     const game = require('../../../assets/images/game.jpg');
-    const clip = require('../../../assets/videos/cinematic.mp4');
-
-    console.log(videos[0].path);
 
     return (
         <div className={cx('wrapper')}>
@@ -82,11 +79,9 @@ const Model = ({ title, description, image, range, time, topSpeed, peakPower }) 
                 </div>
                 <div className={cx('section')} style={{ backgroundImage: `url('${interiorBG}')` }}></div>
             </div>
-            <div>
-                <video style={{ height: '100vh' }} loop={true} autoPlay={true}>
-                    <source src={clip} type="video/mp4" />
-                </video>
-            </div>
+
+            <VidCarousel />
+
             <div className={cx('sm-section-container')}>
                 <Fade bottom distance="50%">
                     <div className={cx('sm-section')}>

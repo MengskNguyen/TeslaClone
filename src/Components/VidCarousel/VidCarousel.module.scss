@@ -1,0 +1,36 @@
+.carousel-wrapper {
+    background-color: black;
+}
+
+.carousel-video-container {
+    width: 100%;
+    padding-top: 142px;
+    height: 100vh;
+
+    video {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+    }
+}
+.carousel-caption-container {
+    width: 100%;
+    height: 40vh;
+    display: flex;
+    align-items: center;
+}
+.caption-wrapper {
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+    display: flex;
+    flex-direction: column;
+    width: 80vh;
+    h4 {
+        color: currentColor;
+    }
+
+    p {
+        color: currentColor;
+    }
+}

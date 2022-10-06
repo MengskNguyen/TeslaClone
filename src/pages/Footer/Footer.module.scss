@@ -25,7 +25,7 @@ $desktop-width: 1024px;
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 5vh;
+    height: 10vh;
 
     @include mobile {
         display: none;
@@ -38,6 +38,7 @@ $desktop-width: 1024px;
     p {
         font-size: 12px;
         color: currentColor;
+        margin-bottom: 0;
     }
 
     a + a {

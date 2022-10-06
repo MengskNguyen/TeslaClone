@@ -66,6 +66,9 @@
         border-radius: 4px;
         cursor: pointer;
         transition: all linear 0.3s;
+        display: flex;
+        align-items: center;
+        justify-content: center;
 
         &:hover {
             background-color: #fff;
@@ -138,7 +141,6 @@
     flex-direction: column;
     align-items: center;
     background-color: black;
-    padding-top: 140px;
 }
 
 .sm-section {
