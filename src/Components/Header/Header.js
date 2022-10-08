@@ -1,7 +1,7 @@
-import React from 'react';
+import React, { useRef } from 'react';
 import classNames from 'classnames/bind';
 import { useDispatch, useSelector } from 'react-redux';
-import { setShowState } from '~/features/burgerNav/burgerNavSlice';
+import { setShowState, getShowState } from '~/features/burgerNav/burgerNavSlice';
 import { selectCars } from '~/features/carSlice/carSlice';
 import { Link } from 'react-router-dom';
 
@@ -14,6 +14,8 @@ const cx = classNames.bind(styles);
 const Header = () => {
     const dispatch = useDispatch();
     const cars = useSelector(selectCars);
+    const showMenu = useSelector(getShowState);
+    const menuRef = useRef(null);
 
     const removeSpace = (input) => {
         const newInput = input.replace(' ', '');
@@ -44,7 +46,8 @@ const Header = () => {
                     <span>Menu</span>
                 </button>
             </div>
-            <BurgerNav />
+
+            {showMenu && <BurgerNav myRef={menuRef} />}
         </div>
     );
 };

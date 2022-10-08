@@ -82,10 +82,13 @@ $desktop-width: 1024px;
 
 .right-menu {
     font-weight: 500;
-    @include mobile {
-        display: none;
-    }
+    margin-left: auto;
+
     a {
+        @include mobile {
+            display: none;
+        }
+
         padding: 4px 8px;
         font-size: 15px;
         transition: background-color 0.3s linear;
